@@ -1,0 +1,51 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"type\":2,\"version\":\"5.59\"}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "fdc3f12e25d16e3321c3",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"04aca927cd2c3ea11480\",\"layouts\":[{\"id\":0,\"position\":{\"x\":107.87906263829971,\"y\":56.592295154517885,\"z\":0,\"width\":922.2775600962837,\"height\":303.2993318437443}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"episode_list.Episode Count\"}],\"Category\":[{\"queryRef\":\"episode_list.publication_date\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"episode_list\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Episode Count\"},\"Name\":\"episode_list.Episode Count\",\"NativeReferenceName\":\"Episode Count\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"publication_date\"},\"Name\":\"episode_list.publication_date\",\"NativeReferenceName\":\"publication_date\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"publication_date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 303.30,
+          "width": 922.28,
+          "x": 107.88,
+          "y": 56.59,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"f70f2da6f4e6f5daf400\",\"layouts\":[{\"id\":0,\"position\":{\"x\":107.87906263829971,\"y\":369.8916269982622,\"width\":922.2775600962837,\"height\":303.2993318437443,\"z\":1}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"episode_list.episode_number\"},{\"queryRef\":\"episode_list.url_link\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"episode_list\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"url_link\"},\"Name\":\"episode_list.url_link\",\"NativeReferenceName\":\"url_link\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"episode_number\"},\"Name\":\"episode_list.episode_number\",\"NativeReferenceName\":\"episode_number\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"episode_number\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"values\":[{\"properties\":{\"urlIcon\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 303.30,
+          "width": 922.28,
+          "x": 107.88,
+          "y": 369.89,
+          "z": 1.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

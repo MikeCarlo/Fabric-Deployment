@@ -1,0 +1,82 @@
+table episode_list
+	lineageTag: 770384ae-466b-4393-9eea-9d56a77f297d
+	sourceLineageTag: [dbo].[episode_list]
+
+	measure 'Episode Count' = ```
+			COUNTROWS('episode_list')
+			
+			
+			```
+		formatString: 0
+		lineageTag: 7a648705-eada-4059-9a25-c31b03dd423c
+
+	column url_link
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4b71dc9f-27a5-4f51-91f6-d96bb097a53f
+		sourceLineageTag: url_link
+		dataCategory: WebUrl
+		summarizeBy: none
+		sourceColumn: url_link
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column guid_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4bfa65aa-7e2e-4797-86c1-fe8fa8da2485
+		sourceLineageTag: guid_id
+		summarizeBy: none
+		sourceColumn: guid_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column publication_date
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: varchar(8000)
+		lineageTag: d39f6580-e319-4b95-bb31-14d062f5f3a5
+		sourceLineageTag: publication_date
+		summarizeBy: none
+		sourceColumn: publication_date
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column summary
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 680dec3c-095e-4527-a2ff-adc3d6d7e041
+		sourceLineageTag: summary
+		summarizeBy: none
+		sourceColumn: summary
+
+		annotation SummarizationSetBy = Automatic
+
+	column episode_number
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 390679ab-83d2-4a18-9a0b-218da1a75a15
+		sourceLineageTag: episode_number
+		summarizeBy: none
+		sourceColumn: episode_number
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	partition episode_list = entity
+		mode: directLake
+		source
+			entityName: episode_list
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "GetPodcasts"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "851c645a-b5c5-804a-49df-f9a88765dcdb"
+  }
+}

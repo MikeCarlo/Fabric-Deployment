@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "Podcast_Lake"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "67955344-ce8f-a2fa-446f-d917ebe866dc"
+  }
+}

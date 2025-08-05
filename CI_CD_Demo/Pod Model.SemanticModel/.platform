@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Pod Model"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "32794b78-b525-8f6d-43ff-c0a3a720e0a2"
+  }
+}

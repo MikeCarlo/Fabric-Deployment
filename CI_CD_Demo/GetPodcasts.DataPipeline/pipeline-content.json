@@ -1,0 +1,457 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "XmlSource",
+            "formatSettings": {
+              "type": "XmlReadSettings",
+              "validationMode": "none",
+              "namespaces": true
+            },
+            "storeSettings": {
+              "type": "HttpReadSettings",
+              "requestMethod": "GET"
+            },
+            "datasetSettings": {
+              "type": "Xml",
+              "typeProperties": {
+                "location": {
+                  "type": "HttpServerLocation",
+                  "relativeUrl": "/s/5bb46378/podcast/rss"
+                }
+              },
+              "externalReferences": {
+                "connection": "723fefc6-4afa-4e57-9844-5743a0867314"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "episodes"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "Podcast_Lake",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "67955344-ce8f-a2fa-446f-d917ebe866dc",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "rss.channel.title",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.title",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.description",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.description",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.link",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.link",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.generator",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.generator",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.lastBuildDate",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.lastBuildDate",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.atom:link.@href",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.atom:link.@href",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.atom:link.@rel",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.atom:link.@rel",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.atom:link.@type",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.atom:link.@type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.author",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.author",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.copyright",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.copyright",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.language",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.language",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.itunes:author",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.itunes:author",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.itunes:summary",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.itunes:summary",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.itunes:type",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.itunes:type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.itunes:owner.itunes:name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.itunes:owner.itunes:name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.itunes:owner.itunes:email",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.itunes:owner.itunes:email",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.itunes:explicit",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "rss.channel.itunes:explicit",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.itunes:category.@text",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.itunes:category.@text",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.itunes:image.@href",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.itunes:image.@href",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.item.title",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.item.title",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.item.description",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.item.description",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.item.link",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.item.link",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.item.guid.@isPermaLink",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "rss.channel.item.guid.@isPermaLink",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.item.guid._value_",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.item.guid._value_",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.item.dc:creator",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.item.dc:creator",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.item.pubDate",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.item.pubDate",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.item.enclosure.@url",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.item.enclosure.@url",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.item.enclosure.@length",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "rss.channel.item.enclosure.@length",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.item.enclosure.@type",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.item.enclosure.@type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.item.itunes:summary",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.item.itunes:summary",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.item.itunes:explicit",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "rss.channel.item.itunes:explicit",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.item.itunes:duration",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.item.itunes:duration",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.item.itunes:image.@href",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.item.itunes:image.@href",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.item.itunes:episode",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "rss.channel.item.itunes:episode",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.item.itunes:episodeType",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "rss.channel.item.itunes:episodeType",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.@version",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "rss.@version",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "rss.channel.item.itunes:season",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "rss.channel.item.itunes:season",
+                  "physicalType": "long"
+                }
+              }
+            ],
+            "collectionReference": "",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            },
+            "columnFlattenSettings": {
+              "treatArrayAsString": false,
+              "treatStructAsString": false,
+              "flattenColumnDelimiter": "."
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "API call to Get Table",
+        "dependsOn": []
+      }
+    ]
+  }
+}
